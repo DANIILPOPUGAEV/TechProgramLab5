@@ -51,7 +51,7 @@ void Function()
 	electronical[3].set_name("DT N0.1"); electronical[3].set_country("США");
 	electronical[4].set_name("Illuminator "); electronical[4].set_country("Китай");
 
-	string row = "----------------------------------------------------------------------------------------------------------\n";
+	string row = "+--------------------------------------------------------------------------------------------------------+\n";
 	cout << row;
 	cout << setiosflags(ios::left) << setw(45) << "|"<< setiosflags(ios::left) << setw(60) << "Механические часы" << "|"<< endl;
 	cout << row;
