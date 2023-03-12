@@ -2,10 +2,10 @@
 #include <iostream>
 #include <iomanip>
 #include "Classes.h" 
-string Maximum(Electronical electronical[5], Mechanical mechanical[5]);
-void Function()
+string Maximum(Electronical electronical[5], Mechanical mechanical[5]); //определение функции
+void Function() //основная функция по заданиям
 {
-	Electronical* electronical;
+	Electronical* electronical; //динамическое выделение памяти 
 	Mechanical* mechanical;
 	electronical = new Electronical[5];
 	mechanical = new Mechanical[5];
@@ -18,7 +18,7 @@ void Function()
 	
 	random_device rd;
 	mt19937 gen(rd());
-	uniform_int_distribution<> dist(2000, 12000);
+	uniform_int_distribution<> dist(2000, 12000); //Использование генератора случайных чисел
 
 	for (int i = 0; i < 5; ++i)
 	{
@@ -51,6 +51,7 @@ void Function()
 	electronical[3].set_name("DT N0.1"); electronical[3].set_country("США");
 	electronical[4].set_name("Illuminator "); electronical[4].set_country("Китай");
 
+	//Блок создания таблицы и занесения в неё данных
 	string row = "+--------------------------------------------------------------------------------------------------------+\n";
 	cout << row;
 	cout << setiosflags(ios::left) << setw(45) << "|"<< setiosflags(ios::left) << setw(60) << "Механические часы" << "|"<< endl;
@@ -155,8 +156,8 @@ void Function()
 	cout << "|";
 	cout << endl;
 	cout << row << "\n";
-	string max = Maximum(electronical, mechanical);
+	string max = Maximum(electronical, mechanical); //вычисляемый показатель
 	cout << "Самый дорогой экземпляр: " << max <<"\n";
 	delete[] electronical;
-	delete[] mechanical;
+	delete[] mechanical; //очищение памяти
 }

@@ -5,11 +5,11 @@
 
 using namespace std;
 
-class Mechanical;
+class Mechanical; // опережающее объ€вление производного класса 
 
 class Watch
 {
-protected:
+protected: //защищенные пол€
 
 	string name;
 	string country;
@@ -27,7 +27,7 @@ public:
 	int get_prise() { return prise; }
 };
 
-class Electronical: private Watch
+class Electronical: private Watch //закрытое наследование 
 {
 private:
 	
@@ -54,7 +54,7 @@ public:
 	friend string Maximum(Electronical electronical[5], Mechanical mechanical[5]);
 };
 
-class Mechanical: public Watch
+class Mechanical: public Watch //открытое наследование
 {
 private:
 	int weight;
@@ -69,7 +69,7 @@ public:
 
 	friend string Maximum(Electronical electronical[5], Mechanical mechanical[5]);
 };
-string Maximum(Electronical electronical[5], Mechanical mechanical[5])
+string Maximum(Electronical electronical[5], Mechanical mechanical[5]) //дружественна€ функци€
 {
 	int max = 0;
 	string nameofWatch;
